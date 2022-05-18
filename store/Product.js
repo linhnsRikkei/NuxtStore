@@ -10,7 +10,22 @@ export const getters = {
 export const mutations = {
   getAllApi (state, items) {
     state.products = items;
-    console.log('state.products', state.products);
+  },
+  sortPriceDecline(state) {
+    state.products.sort((a, b) => {
+      const modifier = 1
+      if (a.Price > b.Price) { return -1 * modifier }
+      if (a.Price < b.Price) { return modifier }
+      return state.products
+    })
+  },
+  sortPriceIncrease(state) {
+    state.products.sort((a, b) => {
+      const modifier = 1
+      if (a.Price < b.Price) { return -1 * modifier }
+      if (a.Price > b.Price) { return modifier }
+      return state.products
+    })
   }
 };
 export const actions = {
@@ -21,5 +36,11 @@ export const actions = {
     } catch (error) {
       console.log(error);
     }
+  },
+  sortPriceIncrease({ commit }) {
+    commit('sortPriceIncrease')
+  },
+  sortPriceDecline({ commit }) {
+    commit('sortPriceDecline')
   }
 };

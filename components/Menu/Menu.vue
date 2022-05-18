@@ -8,11 +8,6 @@ export default {
       console.log('items', this.item);
       return this.$store.getters['Product/getAllProduct']
     }
-  },
-  methods: {
-    CallProduct () {
-      this.$store.dispatch('Product/getAllApi')
-    }
   }
 };
 </script>
@@ -29,7 +24,7 @@ export default {
         v-for="item in getDanhMuc"
         :key="item.id"
       >
-        <div v-on:click="CallProduct">
+        <div>
           <nuxt-link :to="'/DanhMuc/' + item.id">
             {{ item.content }}
           </nuxt-link>

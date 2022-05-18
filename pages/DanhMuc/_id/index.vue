@@ -7,6 +7,9 @@ export default {
     Container,
     HeaderProductList,
     Header
+  },
+  beforeCreate() {
+    this.$store.dispatch('Product/getAllApi')
   }
 };
 </script>
@@ -16,7 +19,7 @@ export default {
     <div class="w-full pt-[50px] bg-[#f2f2f2] flex flex-row justify-center">
       <HeaderProductList />
     </div>
-    <div class="w-full flex flex-row justify-center">
+    <div class="w-full flex flex-row justify-center mt-[20px]">
       <Container :idLoai="this.$route.params.id"/>
     </div>
   </div>

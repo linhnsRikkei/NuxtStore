@@ -1,10 +1,16 @@
 <script>
 import Header from '../../../components/Header.vue';
 export default {
+  beforeCreate() {
+    this.$store.dispatch('Product/getAllApi')
+    this.$store.dispatch('Menu/getAllApi')
+    this.$store.dispatch('Comments/getAllApi')
+  },
   data() {
     return {
-      item: this.$store.state.Product.products.find(el => el.id === this.$route.params.id),
-      commentContent: ''
+      products: this.$store.state.Product.products.find(el => el.id === this.$route.params.id),
+      commentContent: '',
+      items: this.$store.state.Cart
     }
   },
   components: {
@@ -12,16 +18,27 @@ export default {
   },
   computed: {
     getProduct() {
-      console.log('item', this.item);
       return this.$store.getters['Product/getAllProduct'].find(el => el.id === this.$route.params.id)
     },
     getComment() {
       return this.$store.getters['Comments/getAllComment'].filter(el => el.idProduct === this.$route.params.id)
+    },
+    getItemfavority() {
+      return this.$store.getters['Favority/getAllFavorite'].find(el => el.product.id === this.$route.params.id)
+    },
+    getCart() {
+      return this.$store.getters['Cart/getAllCart']
     }
   },
   methods: {
-    addToFavority() {
-      this.$store.dispatch('Favority/AddFavorite', 'data')
+    addToFavority(data) {
+      this.$store.dispatch('Favority/AddFavorite', data)
+    },
+    addToCart(data) {
+      this.$store.dispatch('Cart/AddCart', data)
+    },
+    RemoveFavorite() {
+      this.$store.dispatch('Favority/RemoveFavorite', this.$route.params.id)
     },
     submitContent() {
       const payload = {
@@ -33,14 +50,6 @@ export default {
       setTimeout(() => {
         this.$store.dispatch('Comments/getAllApi')
       }, 1000)
-    }
-  },
-  watch: {
-    item: {
-      deep: true,
-      handler(items) {
-        localStorage.setItem('DataLocal', JSON.stringify(items))
-      }
     }
   }
 };
@@ -57,15 +66,15 @@ export default {
       >
         <div class="w-[50%]">
           <img
-            v-bind:src="item.Image"
+            v-bind:src="products.Image"
             alt=""
             class="w-[90%]"
           />
         </div>
         <div class="w-[50%] flex flex-col justify-start items-start">
-          <h2 class="text-[50px] pb-[20px]">{{item.Name}}</h2>
-          <p class="text-[30px] py-[10px]">Price: {{item.Price}}</p>
-          <p class="text-[30px] py-[10px]">Color: {{item.Color}}</p>
+          <h2 class="text-[50px] pb-[20px]">{{products.Name}}</h2>
+          <p class="text-[30px] py-[10px]">Price: {{products.Price}}</p>
+          <p class="text-[30px] py-[10px]">Color: {{products.Color}}</p>
           <div class="text-[35px]">
             <p>Size</p>
             <div class="">
@@ -79,8 +88,14 @@ export default {
             <p>Quantity (100 avaiable)</p>
             <input type="number" class="w-[50px] outline-none" min="0"/>
           </div>
-          <button class="mt-[30px] text-[30px] border py-[5px] px-[15px] bg-[#080808] text-[#fff] hover:bg-[#fff] hover:text-[#000] transition-all duration-300">Add to cart</button>
-          <button class="mt-[30px] text-[20px] text-[#535252] hover:text-[#000] transition-all duration-300" @click="addToFavority">Add to favorite</button>
+          <button class="mt-[30px] text-[30px] border py-[5px] px-[15px] bg-[#080808] text-[#fff] hover:bg-[#fff] hover:text-[#000] transition-all duration-300" @click="addToCart(getProduct)">Add to cart</button>
+          <button v-if="getItemfavority" class="mt-[30px] text-[20px] text-[#535252] hover:text-[#000] transition-all duration-300" @click="RemoveFavorite">
+            <i class="fa-solid fa-heart-circle-minus"></i> Remove Favority
+          </button>
+          <button v-else class="mt-[30px] text-[20px] text-[#535252] hover:text-[#000] transition-all duration-300" @click="addToFavority(getProduct)">
+            <i class="fa-solid fa-heart-circle-plus"></i>
+            Add to favorite
+          </button>
         </div>
       </div>
       <!-- Review -->

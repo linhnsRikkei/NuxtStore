@@ -4,7 +4,9 @@ export default {
     return {
       open: false,
       search: false,
-      favorite: false
+      favorite: false,
+      login: false,
+      cart: false
     };
   },
   methods: {
@@ -16,7 +18,13 @@ export default {
       this.search = !this.search;
     },
     favoriteOpen() {
-      this.search = !this.favorite;
+      this.favorite = !this.favorite;
+    },
+    loginOpen() {
+      this.login = !this.login;
+    },
+    cartOpen() {
+      this.cart = !this.cart;
     }
   }
 };
@@ -55,7 +63,7 @@ export default {
         <ul class="flex flex-row justify-end items-center">
           <!-- search -->
           <li
-            class="w-[54px] h-[54px] flex flex-row justify-center items-center"
+            class="w-[54px] h-[54px] flex flex-row justify-center items-center cursor-pointer"
             v-on:click="searchOpen"
           >
             <i class="fa-solid fa-magnifying-glass text-[24px]"></i>
@@ -74,35 +82,61 @@ export default {
           </div>
           <!-- favorite -->
           <li
-            class="w-[54px] h-[54px] flex flex-row justify-center items-center"
-            v-on:click="searchOpen"
+            class="w-[54px] h-[54px] flex flex-row justify-center items-center cursor-pointer"
+            v-on:click="favoriteOpen"
           >
             <i class="fa-solid fa-heart text-[24px]"></i>
           </li>
-          <!-- <div
-            v-if="search === true"
+          <div
+            v-if="favorite === true"
             class="w-[700px] h-[1000px] bg-[#fdfafa] text-[#000] z-50 absolute top-[53px] left-[63%] transition-all duration-700"
           >
-            <Favorite />
+            <Favority />
           </div>
           <div
             v-else
             class="w-[700px] h-[1000px] bg-[#fdfafa] text-[#000] z-50 absolute top-[-1000px] left-[63%]  transition-all duration-700"
           >
-            <Favorite />
-          </div> -->
+            <Favority />
+          </div>
           <!-- cart -->
           <li
-            class="w-[54px] h-[54px] flex flex-row justify-center items-center"
+            class="w-[54px] h-[54px] flex flex-row justify-center items-center cursor-pointer"
+            v-on:click="cartOpen"
           >
             <i class="fa-solid fa-cart-arrow-down text-[24px]"></i>
           </li>
+          <div
+            v-if="cart === true"
+            class="w-[800px] h-[1000px] bg-[#fdfafa] text-[#000] z-0 absolute top-[53px] left-[57%] transition-all duration-700"
+          >
+            <CartMain />
+          </div>
+          <div
+            v-else
+            class="w-[800px] h-[1000px] bg-[#fdfafa] text-[#000] z-0 absolute top-[-1500px] left-[57%]  transition-all duration-700"
+          >
+            <CartMain />
+          </div>
           <!-- login -->
           <li
-            class="w-[54px] h-[54px] flex flex-row justify-center items-center"
+            class="w-[54px] h-[54px] flex flex-row justify-center items-center cursor-pointer"
+            v-on:click="loginOpen"
           >
-            <i class="fa-solid fa-circle-user text-[24px]"></i>
+           <i class="fa-solid fa-user text-[25px]"></i>
           </li>
+          <div
+            v-if="login === true"
+            class="w-[620px] h-[500px] bg-[#fdfafa] text-[#000] z-50 absolute top-[200px] left-[50%] translate-x-[-50%] transition-all duration-700"
+          >
+            <Login />
+          </div>
+          <div
+            v-else
+            class="w-[620px] h-[500px] bg-[#fdfafa] text-[#000] z-50 absolute top-[-1000px] left-[50%] translate-x-[-50%]  transition-all duration-700"
+          >
+            <Login />
+          </div>
         </ul>
       </div>
     </div>
