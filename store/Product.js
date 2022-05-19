@@ -1,6 +1,7 @@
 import { HTTP } from '~/static/Api';
 export const state = () => ({
-  products: []
+  products: [],
+  productByID: []
 });
 export const getters = {
   getAllProduct (state) {

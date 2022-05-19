@@ -5,6 +5,7 @@ export default {
     this.$store.dispatch('Product/getAllApi')
     this.$store.dispatch('Menu/getAllApi')
     this.$store.dispatch('Comments/getAllApi')
+    console.log('before', this.products);
   },
   data() {
     return {
@@ -12,6 +13,9 @@ export default {
       commentContent: '',
       items: this.$store.state.Cart
     }
+  },
+  mounted() {
+    console.log('created', this.getProduct);
   },
   components: {
     Header
@@ -50,6 +54,9 @@ export default {
       setTimeout(() => {
         this.$store.dispatch('Comments/getAllApi')
       }, 1000)
+    },
+    log() {
+      console.log(this.getProduct);
     }
   }
 };
@@ -61,20 +68,20 @@ export default {
       class="w-full pb-[50px] pt-[100px] bg-[#f2f2f2] flex flex-col justify-center items-center"
     >
       <!-- Thông tin  -->
-      <div
+      <div v-if="getProduct"
         class="w-[1180px] flex flex-row justify-between items-start font-sans"
       >
         <div class="w-[50%]">
           <img
-            v-bind:src="products.Image"
+            v-bind:src="getProduct.Image"
             alt=""
             class="w-[90%]"
           />
         </div>
         <div class="w-[50%] flex flex-col justify-start items-start">
-          <h2 class="text-[50px] pb-[20px]">{{products.Name}}</h2>
-          <p class="text-[30px] py-[10px]">Price: {{products.Price}}</p>
-          <p class="text-[30px] py-[10px]">Color: {{products.Color}}</p>
+          <h2 class="text-[50px] pb-[20px]">{{getProduct.Name}}</h2>
+          <p class="text-[30px] py-[10px]">Price: {{getProduct.Price}}</p>
+          <p class="text-[30px] py-[10px]">Color: {{getProduct.Color}}</p>
           <div class="text-[35px]">
             <p>Size</p>
             <div class="">

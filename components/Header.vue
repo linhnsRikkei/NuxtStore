@@ -108,7 +108,7 @@ export default {
           </li>
           <div
             v-if="cart === true"
-            class="w-[800px] h-[1000px] bg-[#fdfafa] text-[#000] z-0 absolute top-[53px] left-[57%] transition-all duration-700"
+            class="w-[800px] overflow-y-auto h-[1000px] bg-[#fdfafa] text-[#000] z-0 absolute top-[53px] left-[57%] transition-all duration-700"
           >
             <CartMain />
           </div>

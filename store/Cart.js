@@ -3,7 +3,7 @@ export const state = () => ({
 });
 export const getters = {
   getAllCart (state) {
-    return state.carts;
+    return state.carts
   },
   getTotal (state) {
     let total = 0;
@@ -44,7 +44,7 @@ export const mutations = {
       console.log(payload);
       for (let i = 0; i < state.carts.length; i++) {
         if (state.carts[i].product.id === payload.idItem) {
-          state.carts[i].count = payload.count;
+          state.carts[i].count = parseInt(payload.count);
           alert('Update thành công')
         }
       }

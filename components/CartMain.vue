@@ -3,6 +3,8 @@ export default {
   name: 'Cart',
   data() {
     return {
+      items: this.$store.state.Cart,
+      local: [],
       count: 0
     }
   },
@@ -15,6 +17,9 @@ export default {
     },
     getTotal() {
       return this.$store.getters['Cart/getTotal']
+    },
+    getCart2() {
+      return JSON.parse(localStorage.getItem('CartLocal'))
     }
   },
   methods: {
@@ -31,6 +36,18 @@ export default {
     },
     RemoveAllCart() {
       this.$store.dispatch('Cart/RemoveAllCart')
+    },
+    log() {
+      this.local = JSON.parse(localStorage.getItem('CartLocal'))
+      console.log('items', this.getCart2);
+    }
+  },
+  watch: {
+    items: {
+      deep: true,
+      handler(items) {
+        localStorage.setItem('CartLocal', JSON.stringify(items));
+      }
     }
   }
 }
@@ -67,7 +84,7 @@ export default {
           </div>
       </div>
       <!-- Price -->
-      <div class="w-full bg-[#d3d3d3]">
+      <div class="w-full bg-[#d3d3d3] pb-[100px]">
           <div class="w-full px-[30px] flex flex-col justify-between items-center">
               <h2 class="inline-block w-full text-[24px] text-[#4f4f4f] font-serif mb-[30px] text-left">Shopping summary</h2>
               <div class="w-full text-[18px] text-[#4f4f4f] font-serif mb-[30px] flex flex-row justify-between items-center">
@@ -84,8 +101,12 @@ export default {
                   <p v-else class="text-[25px] font-[700]">{{getTotal + 50000}} VND</p>
               </div>
               <div class="w-full text-[#4f4f4f] font-serif mb-[30px] flex flex-row justify-between items-center">
+                <nuxt-link to="/">
                   <button class="text-[15px]">Return to shopping</button>
+                </nuxt-link>
+                <nuxt-link to="/Cart">
                   <button class="text-[19px] border py-[20px] px-[10px] text-center text-[#fff] bg-[#000]">Go to checkout</button>
+                </nuxt-link>
               </div>
           </div>
       </div>
