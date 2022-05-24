@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Admin",
+    "path": "/Admin",
+    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\index.vue",
+    "chunkName": "pages/Admin/index"
+  },
+  {
+    "name": "Cart",
+    "path": "/Cart",
+    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Cart\\\\index.vue",
+    "chunkName": "pages/Cart/index"
+  },
+  {
+    "name": "Admin-Dashboard",
+    "path": "/Admin/Dashboard",
+    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\Dashboard\\\\index.vue",
+    "chunkName": "pages/Admin/Dashboard/index"
+  },
+  {
+    "name": "Admin-LoaiSP",
+    "path": "/Admin/LoaiSP",
+    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\LoaiSP\\\\index.vue",
+    "chunkName": "pages/Admin/LoaiSP/index"
+  },
+  {
+    "name": "Admin-SanPham",
+    "path": "/Admin/SanPham",
+    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\SanPham\\\\index.vue",
+    "chunkName": "pages/Admin/SanPham/index"
+  },
+  {
+    "name": "Admin-LoaiSP-ThemMoi",
+    "path": "/Admin/LoaiSP/ThemMoi",
+    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\LoaiSP\\\\ThemMoi.vue",
+    "chunkName": "pages/Admin/LoaiSP/ThemMoi"
+  },
+  {
+    "name": "Admin-SanPham-ThemMoi",
+    "path": "/Admin/SanPham/ThemMoi",
+    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\SanPham\\\\ThemMoi.vue",
+    "chunkName": "pages/Admin/SanPham/ThemMoi"
+  },
+  {
+    "name": "Admin-LoaiSP-id-update",
+    "path": "/Admin/LoaiSP/:id/update",
+    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\LoaiSP\\\\_id\\\\update.vue",
+    "chunkName": "pages/Admin/LoaiSP/_id/update"
+  },
+  {
+    "name": "Admin-SanPham-id-update",
+    "path": "/Admin/SanPham/:id/update",
+    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\SanPham\\\\_id\\\\update.vue",
+    "chunkName": "pages/Admin/SanPham/_id/update"
+  },
+  {
+    "name": "DanhMuc-id",
+    "path": "/DanhMuc/:id",
+    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\DanhMuc\\\\_id\\\\index.vue",
+    "chunkName": "pages/DanhMuc/_id/index"
+  },
+  {
+    "name": "ProductList-id",
+    "path": "/ProductList/:id",
+    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\ProductList\\\\_id\\\\index.vue",
+    "chunkName": "pages/ProductList/_id/index"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  }
+]

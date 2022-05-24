@@ -1,0 +1,44 @@
+{
+  "Banner": {
+    "description": "Auto imported from components/Banner.vue"
+  },
+  "CartMain": {
+    "description": "Auto imported from components/CartMain.vue"
+  },
+  "Content": {
+    "description": "Auto imported from components/Content.vue"
+  },
+  "Favority": {
+    "description": "Auto imported from components/Favority.vue"
+  },
+  "Header": {
+    "description": "Auto imported from components/Header.vue"
+  },
+  "Login": {
+    "description": "Auto imported from components/Login.vue"
+  },
+  "NuxtLogo": {
+    "description": "Auto imported from components/NuxtLogo.vue"
+  },
+  "Search": {
+    "description": "Auto imported from components/Search.vue"
+  },
+  "Tutorial": {
+    "description": "Auto imported from components/Tutorial.vue"
+  },
+  "CartInfor": {
+    "description": "Auto imported from components/CartInfo/CartInfor.vue"
+  },
+  "ChartsBarChart": {
+    "description": "Auto imported from components/Charts/BarChart.vue"
+  },
+  "Menu": {
+    "description": "Auto imported from components/Menu/Menu.vue"
+  },
+  "ProductListContainer": {
+    "description": "Auto imported from components/productList/Container.vue"
+  },
+  "ProductListHeaderProductList": {
+    "description": "Auto imported from components/productList/HeaderProductList.vue"
+  }
+}
