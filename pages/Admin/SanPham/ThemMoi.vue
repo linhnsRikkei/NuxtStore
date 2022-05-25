@@ -82,7 +82,7 @@ export default {
                 v-model="Name"
                 placeholder="Name product"
                 class="
-                  w-[300px]
+                  w-[700px]
                   outline-none
                   border-[1px] border-[#7c7b7b]
                   py-[10px]

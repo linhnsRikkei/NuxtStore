@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "myapp",
+    title: "Nguyen Sach Linh Store",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -37,7 +37,14 @@ export default {
     "@nuxtjs/pwa",
     // https://go.nuxtjs.dev/content
     "@nuxt/content",
+    // toast
+    '@nuxtjs/toast'
   ],
+  toast: {
+    position: 'top-right',
+    theme: "bubble",
+    duration: 5000
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -64,4 +71,7 @@ export default {
       },
     },
   },
+  env: {
+    fbAPIKey: 'AIzaSyAZx_RUev-d6j7EAfybKakSfNAkEUsgH2s'
+  }
 };

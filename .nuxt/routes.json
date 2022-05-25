@@ -2,8 +2,52 @@
   {
     "name": "Admin",
     "path": "/Admin",
-    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\index.vue",
-    "chunkName": "pages/Admin/index"
+    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin.vue",
+    "chunkName": "pages/Admin",
+    "children": [
+      {
+        "name": "Admin-Dashboard",
+        "path": "Dashboard",
+        "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\Dashboard\\\\index.vue",
+        "chunkName": "pages/Admin/Dashboard/index"
+      },
+      {
+        "name": "Admin-LoaiSP",
+        "path": "LoaiSP",
+        "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\LoaiSP\\\\index.vue",
+        "chunkName": "pages/Admin/LoaiSP/index"
+      },
+      {
+        "name": "Admin-SanPham",
+        "path": "SanPham",
+        "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\SanPham\\\\index.vue",
+        "chunkName": "pages/Admin/SanPham/index"
+      },
+      {
+        "name": "Admin-LoaiSP-ThemMoi",
+        "path": "LoaiSP/ThemMoi",
+        "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\LoaiSP\\\\ThemMoi.vue",
+        "chunkName": "pages/Admin/LoaiSP/ThemMoi"
+      },
+      {
+        "name": "Admin-SanPham-ThemMoi",
+        "path": "SanPham/ThemMoi",
+        "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\SanPham\\\\ThemMoi.vue",
+        "chunkName": "pages/Admin/SanPham/ThemMoi"
+      },
+      {
+        "name": "Admin-LoaiSP-id-update",
+        "path": "LoaiSP/:id/update",
+        "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\LoaiSP\\\\_id\\\\update.vue",
+        "chunkName": "pages/Admin/LoaiSP/_id/update"
+      },
+      {
+        "name": "Admin-SanPham-id-update",
+        "path": "SanPham/:id/update",
+        "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\SanPham\\\\_id\\\\update.vue",
+        "chunkName": "pages/Admin/SanPham/_id/update"
+      }
+    ]
   },
   {
     "name": "Cart",
@@ -12,46 +56,10 @@
     "chunkName": "pages/Cart/index"
   },
   {
-    "name": "Admin-Dashboard",
-    "path": "/Admin/Dashboard",
-    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\Dashboard\\\\index.vue",
-    "chunkName": "pages/Admin/Dashboard/index"
-  },
-  {
-    "name": "Admin-LoaiSP",
-    "path": "/Admin/LoaiSP",
-    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\LoaiSP\\\\index.vue",
-    "chunkName": "pages/Admin/LoaiSP/index"
-  },
-  {
-    "name": "Admin-SanPham",
-    "path": "/Admin/SanPham",
-    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\SanPham\\\\index.vue",
-    "chunkName": "pages/Admin/SanPham/index"
-  },
-  {
-    "name": "Admin-LoaiSP-ThemMoi",
-    "path": "/Admin/LoaiSP/ThemMoi",
-    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\LoaiSP\\\\ThemMoi.vue",
-    "chunkName": "pages/Admin/LoaiSP/ThemMoi"
-  },
-  {
-    "name": "Admin-SanPham-ThemMoi",
-    "path": "/Admin/SanPham/ThemMoi",
-    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\SanPham\\\\ThemMoi.vue",
-    "chunkName": "pages/Admin/SanPham/ThemMoi"
-  },
-  {
-    "name": "Admin-LoaiSP-id-update",
-    "path": "/Admin/LoaiSP/:id/update",
-    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\LoaiSP\\\\_id\\\\update.vue",
-    "chunkName": "pages/Admin/LoaiSP/_id/update"
-  },
-  {
-    "name": "Admin-SanPham-id-update",
-    "path": "/Admin/SanPham/:id/update",
-    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\SanPham\\\\_id\\\\update.vue",
-    "chunkName": "pages/Admin/SanPham/_id/update"
+    "name": "Register",
+    "path": "/Register",
+    "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Register\\\\index.vue",
+    "chunkName": "pages/Register/index"
   },
   {
     "name": "DanhMuc-id",

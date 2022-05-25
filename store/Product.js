@@ -14,7 +14,7 @@ export const mutations = {
   },
   async deleteProduct(state, payload) {
     try {
-      await HTTP.delete(`Product/${payload}`)
+      await HTTP.delete('Product/' + payload + '.json')
     } catch (error) {
       console.log(error);
     }
@@ -22,14 +22,14 @@ export const mutations = {
   async updateProduct(state, payload) {
     console.log(payload);
     try {
-      await HTTP.put(`Product/${payload.id}`, payload.data)
+      await HTTP.put('Product/' + payload.id + '.json', payload.data)
     } catch (error) {
       console.log(error);
     }
   },
   async AddProduct(state, payload) {
     try {
-      await HTTP.post('Product', payload.data)
+      await HTTP.post('Product.json', payload.data)
     } catch (error) {
       console.log(error);
     }
@@ -70,8 +70,12 @@ export const mutations = {
 export const actions = {
   async getAllApi ({ commit }) {
     try {
-      const res = await HTTP.get('Product');
-      commit('getAllApi', res.data);
+      const res = await HTTP.get('Product.json');
+      const products = []
+      for (const key in res.data) {
+        products.push({ ...res.data[key], id: key })
+      }
+      commit('getAllApi', products);
     } catch (error) {
       console.log(error);
     }

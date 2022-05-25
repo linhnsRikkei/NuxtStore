@@ -200,7 +200,7 @@ export async function setContext (app, context) {
       payload: context.payload,
       error: context.error,
       base: app.router.options.base,
-      env: {}
+      env: {"fbAPIKey":"AIzaSyAZx_RUev-d6j7EAfybKakSfNAkEUsgH2s"}
     }
     // Only set once
 

@@ -49,7 +49,6 @@ export const mutations = {
         }
       }
     }
-    console.log(state.carts);
   }
 };
 export const actions = {

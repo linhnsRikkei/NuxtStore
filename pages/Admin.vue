@@ -1,5 +1,8 @@
 <script>
 export default {
+  head: {
+    title: 'Admin | SanPham | Sach Linh Store'
+  }
 }
 </script>
 <template>

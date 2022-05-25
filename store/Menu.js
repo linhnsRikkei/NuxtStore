@@ -29,21 +29,21 @@ export const mutations = {
   },
   async updateLoai(state, payload) {
     try {
-      await HTTP.put(`Subject/${payload.id}`, payload.data)
+      await HTTP.put('Menu/' + payload.id + '.json', payload.data)
     } catch (error) {
       console.log(error);
     }
   },
   async deleteLoai(state, payload) {
     try {
-      await HTTP.delete(`Subject/${payload}`)
+      await HTTP.delete('Menu/' + payload + '.json')
     } catch (error) {
       console.log(error);
     }
   },
   async AddLoai(state, payload) {
     try {
-      await HTTP.post('Subject', payload.data)
+      await HTTP.post('Menu.json', payload.data)
     } catch (error) {
       console.log(error);
     }
@@ -52,8 +52,12 @@ export const mutations = {
 export const actions = {
   async getAllApi({ commit }) {
     try {
-      const res = await HTTP.get('Subject');
-      commit('getAllApi', res.data);
+      const res = await HTTP.get('Menu.json');
+      const menus = []
+      for (const key in res.data) {
+        menus.push({ ...res.data[key], id: key })
+      }
+      commit('getAllApi', menus);
     } catch (error) {
       console.log(error);
     }

@@ -4,7 +4,6 @@ export default {
   data() {
     return {
       items: this.$store.state.Cart,
-      local: [],
       count: 0
     }
   },
@@ -17,9 +16,6 @@ export default {
     },
     getTotal() {
       return this.$store.getters['Cart/getTotal']
-    },
-    getCart2() {
-      return JSON.parse(localStorage.getItem('CartLocal'))
     }
   },
   methods: {
@@ -36,10 +32,6 @@ export default {
     },
     RemoveAllCart() {
       this.$store.dispatch('Cart/RemoveAllCart')
-    },
-    log() {
-      this.local = JSON.parse(localStorage.getItem('CartLocal'))
-      console.log('items', this.getCart2);
     }
   },
   watch: {

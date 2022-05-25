@@ -14,6 +14,7 @@ import { createStore } from './store.js'
 /* Plugins */
 
 import nuxt_plugin_plugin_1beb9540 from 'nuxt_plugin_plugin_1beb9540' // Source: .\\components\\plugin.js (mode: 'all')
+import nuxt_plugin_toast_19cd93dc from 'nuxt_plugin_toast_19cd93dc' // Source: .\\toast.js (mode: 'client')
 import nuxt_plugin_pluginclient_25ff5414 from 'nuxt_plugin_pluginclient_25ff5414' // Source: .\\content\\plugin.client.js (mode: 'client')
 import nuxt_plugin_pluginserver_52b9c77e from 'nuxt_plugin_pluginserver_52b9c77e' // Source: .\\content\\plugin.server.js (mode: 'server')
 import nuxt_plugin_workbox_dbb6dc82 from 'nuxt_plugin_workbox_dbb6dc82' // Source: .\\workbox.js (mode: 'client')
@@ -87,7 +88,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"myapp","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+    head: {"title":"Nguyen Sach Linh Store","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
 
     store,
     router,
@@ -218,6 +219,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_plugin_1beb9540 === 'function') {
     await nuxt_plugin_plugin_1beb9540(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_toast_19cd93dc === 'function') {
+    await nuxt_plugin_toast_19cd93dc(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_pluginclient_25ff5414 === 'function') {
