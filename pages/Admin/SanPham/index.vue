@@ -1,10 +1,15 @@
 <script>
 export default {
+  middleware: 'auth',
+  head: {
+    title: 'Admin | SanPham | Sach Linh Store'
+  },
   data() {
     return {
       searchName: '',
       sort: '0',
-      category: ''
+      category: '',
+      token: this.$store.state.Auth
     }
   },
   beforeCreate() {
@@ -18,6 +23,9 @@ export default {
     getDanhMuc() {
       return this.$store.getters['Menu/getAllDanhMuc'];
     },
+    getToken() {
+      return this.$store.getters['Auth/getToken'];
+    },
     searchProduct() {
       const search = this.searchName
       const category = this.category
@@ -30,7 +38,11 @@ export default {
   },
   methods: {
     deleteProduct(id) {
-      this.$store.dispatch('Product/deleteProduct', id)
+      const payload = {
+        idItem: id,
+        token: this.token
+      }
+      this.$store.dispatch('Product/deleteProduct', payload)
       alert('Xoa thanh cong')
       this.$store.dispatch('Product/getAllApi')
     },

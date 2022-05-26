@@ -2,7 +2,8 @@
 export default {
   data() {
     return {
-      content: ''
+      content: '',
+      token: this.$store.state.Auth
     };
   },
   beforeCreate() {
@@ -11,6 +12,9 @@ export default {
   computed: {
     getDanhMuc() {
       return this.$store.getters['Menu/getAllDanhMuc']
+    },
+    getToken() {
+      return this.$store.getters['Auth/getToken']
     }
   },
   methods: {
@@ -19,7 +23,8 @@ export default {
         const payload = {
           data: {
             content: this.content
-          }
+          },
+          token: this.token
         };
         this.$store.dispatch('Menu/AddLoai', payload);
         alert('Them thanh cong');

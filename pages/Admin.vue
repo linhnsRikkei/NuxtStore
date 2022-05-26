@@ -1,7 +1,7 @@
 <script>
 export default {
   head: {
-    title: 'Admin | SanPham | Sach Linh Store'
+    title: 'Admin | Sach Linh Store'
   }
 }
 </script>

@@ -2,7 +2,8 @@
 export default {
   data() {
     return {
-      content: ''
+      content: '',
+      token: this.$store.state.Auth
     }
   },
   beforeCreate() {
@@ -13,6 +14,9 @@ export default {
       return this.$store.getters['Menu/getAllDanhMuc'].find(
         el => el.id === this.$route.params.id
       );
+    },
+    getToken() {
+      return this.$store.getters['Auth/getToken']
     }
   },
   created() {
@@ -27,7 +31,8 @@ export default {
           id: this.$route.params.id,
           data: {
             content: this.content
-          }
+          },
+          token: this.token
         };
         this.$store.dispatch('Menu/updateLoai', payload);
         alert('Update thanh cong');

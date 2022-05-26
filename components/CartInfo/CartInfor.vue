@@ -6,7 +6,8 @@ export default {
       name: '',
       phone: '',
       email: '',
-      total: 0
+      total: 0,
+      token: this.$store.state.Auth
     }
   },
   beforeCreate() {
@@ -16,27 +17,37 @@ export default {
     getCart() {
       return this.$store.getters['Cart/getAllCart']
     },
+    getToken() {
+      return this.$store.getters['Auth/getToken']
+    },
     getTotal() {
       return this.$store.getters['Cart/getTotal']
     }
   },
   methods: {
     addInvoice() {
-      const payload = {
-        name: this.name,
-        email: this.email,
-        phone: this.phone,
-        products: this.getCart,
-        total: this.getTotal + 50000
+      try {
+        const payload = {
+          data: {
+            name: this.name,
+            email: this.email,
+            phone: this.phone,
+            products: this.getCart,
+            total: this.getTotal + 50000
+          },
+          token: this.token
+        }
+        this.$store.dispatch('Invoice/addInvoice', payload)
+        setTimeout(() => {
+          this.name = ''
+          this.email = ''
+          this.phone = ''
+          this.total = 0
+          this.$store.dispatch('Cart/RemoveAllCart')
+        }, 500);
+      } catch (error) {
+        console.log(error);
       }
-      this.$store.dispatch('Invoice/addInvoice', payload)
-      setTimeout(() => {
-        this.name = ''
-        this.email = ''
-        this.phone = ''
-        this.total = 0
-      }, 500);
-      this.$router.replace(this.$router.go('/'))
     }
   }
 }
@@ -59,9 +70,6 @@ export default {
                 <!-- Button -->
                 <div class="w-full flex flex-row justify-between items-center mt-[50px]">
                     <button type="submit" class="text-[30px] border-[1px] py-[10px] px-[50px] bg-[#696969] text-white hover:bg-[#161616]">Order</button>
-                    <nuxt-link to="/" class="border-b-[1px] hover:border-[#1cc00d]">
-                      or login to your account
-                    </nuxt-link>
                 </div>
               </form>
           </div>

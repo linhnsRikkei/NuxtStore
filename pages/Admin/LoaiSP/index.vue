@@ -1,9 +1,14 @@
 <script>
 export default {
+  middleware: ['check_auth', 'auth'],
+  head: {
+    title: 'Admin | LoaiSP | Sach Linh Store'
+  },
   data() {
     return {
       searchName: '',
-      sort: '0'
+      sort: '0',
+      token: this.$store.state.Auth
     }
   },
   beforeCreate() {
@@ -12,6 +17,9 @@ export default {
   computed: {
     getDanhMuc() {
       return this.$store.getters['Menu/getAllDanhMuc'];
+    },
+    getToken() {
+      return this.$store.getters['Auth/getToken']
     },
     searchMenu() {
       const search = this.searchName
@@ -22,7 +30,12 @@ export default {
   },
   methods: {
     deleteLoai(id) {
-      this.$store.dispatch('Menu/deleteLoai', id)
+      const payload = {
+        idItem: id,
+        token: this.token
+      };
+      console.log(payload);
+      this.$store.dispatch('Menu/deleteLoai', payload)
       alert('Xoa thanh cong')
       this.$store.dispatch('Menu/getAllApi')
     },

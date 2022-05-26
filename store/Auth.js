@@ -4,6 +4,9 @@ export const state = () => ({
 export const getters = {
   getToken (state) {
     return state.token
+  },
+  isAuthenticated (state) {
+    return state.token != null
   }
 };
 export const mutations = {
@@ -33,11 +36,19 @@ export const actions = {
           commit('setToken', result.idToken)
           resolve({ success: true })
           localStorage.setItem('User', JSON.stringify(result))
+          localStorage.setItem('Token', result.idToken)
         })
         .catch((error) => {
           this.$toast.error('Fail authenticated')
           console.log(error);
         })
     })
+  },
+  initAuth({ commit }) {
+    const tokenLocal = localStorage.getItem('Token')
+    if (!tokenLocal) {
+      return false
+    }
+    commit('setItem', tokenLocal)
   }
 };

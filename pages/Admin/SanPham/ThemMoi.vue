@@ -6,7 +6,8 @@ export default {
       Image: '',
       Price: 0,
       Color: '',
-      loaiSP: ''
+      loaiSP: '',
+      token: this.$store.state.Auth
     };
   },
   beforeCreate() {
@@ -20,6 +21,9 @@ export default {
     },
     getDanhMuc() {
       return this.$store.getters['Menu/getAllDanhMuc']
+    },
+    getToken() {
+      return this.$store.getters['Auth/getToken']
     }
   },
   created() {
@@ -35,7 +39,8 @@ export default {
             Price: this.Price,
             Color: this.Color,
             idLoai: this.loaiSP
-          }
+          },
+          token: this.token
         };
         this.$store.dispatch('Product/AddProduct', payload);
         alert('Them thanh cong');

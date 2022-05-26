@@ -14,22 +14,21 @@ export const mutations = {
   },
   async deleteProduct(state, payload) {
     try {
-      await HTTP.delete('Product/' + payload + '.json')
+      await HTTP.delete('Product/' + payload.idItem + '.json?auth=' + payload.token.token)
     } catch (error) {
       console.log(error);
     }
   },
   async updateProduct(state, payload) {
-    console.log(payload);
     try {
-      await HTTP.put('Product/' + payload.id + '.json', payload.data)
+      await HTTP.put('Product/' + payload.id + '.json?auth=' + payload.token.token, payload.data)
     } catch (error) {
       console.log(error);
     }
   },
   async AddProduct(state, payload) {
     try {
-      await HTTP.post('Product.json', payload.data)
+      await HTTP.post('Product.json?auth=' + payload.token.token, payload.data)
     } catch (error) {
       console.log(error);
     }

@@ -43,7 +43,7 @@ export default {
   toast: {
     position: 'top-right',
     theme: "bubble",
-    duration: 5000
+    duration: 1000
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

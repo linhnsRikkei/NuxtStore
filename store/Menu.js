@@ -29,21 +29,21 @@ export const mutations = {
   },
   async updateLoai(state, payload) {
     try {
-      await HTTP.put('Menu/' + payload.id + '.json', payload.data)
+      await HTTP.put('Menu/' + payload.id + '.json?auth=' + payload.token.token, payload.data)
     } catch (error) {
       console.log(error);
     }
   },
   async deleteLoai(state, payload) {
     try {
-      await HTTP.delete('Menu/' + payload + '.json')
+      await HTTP.delete('Menu/' + payload.idItem + '.json?auth=' + payload.token.token)
     } catch (error) {
       console.log(error);
     }
   },
   async AddLoai(state, payload) {
     try {
-      await HTTP.post('Menu.json', payload.data)
+      await HTTP.post('Menu.json?auth=' + payload.token.token, payload.data)
     } catch (error) {
       console.log(error);
     }

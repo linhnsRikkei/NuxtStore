@@ -12,10 +12,10 @@ export const mutations = {
     state.invoices = items;
   },
   async addInvoice(state, payload) {
-    // console.log(payload);
-    if (payload.products.length > 0) {
+    console.log(payload);
+    if (payload.data.products.length > 0) {
       try {
-        await HTTP.post('Invoice.json', payload)
+        await HTTP.post('Invoice.json?auth=' + payload.token.token, payload.data)
         alert('Them thanh cong')
       } catch (error) {
         console.log(error)
