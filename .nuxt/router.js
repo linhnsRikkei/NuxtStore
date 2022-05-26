@@ -6,10 +6,12 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _08942b70 = () => interopDefault(import('..\\pages\\Admin.vue' /* webpackChunkName: "pages/Admin" */))
 const _6fda2b64 = () => interopDefault(import('..\\pages\\Admin\\Dashboard\\index.vue' /* webpackChunkName: "pages/Admin/Dashboard/index" */))
+const _237d8026 = () => interopDefault(import('..\\pages\\Admin\\DonHang\\index.vue' /* webpackChunkName: "pages/Admin/DonHang/index" */))
 const _506ffc2c = () => interopDefault(import('..\\pages\\Admin\\LoaiSP\\index.vue' /* webpackChunkName: "pages/Admin/LoaiSP/index" */))
 const _16f1bcbe = () => interopDefault(import('..\\pages\\Admin\\SanPham\\index.vue' /* webpackChunkName: "pages/Admin/SanPham/index" */))
 const _740997c3 = () => interopDefault(import('..\\pages\\Admin\\LoaiSP\\ThemMoi.vue' /* webpackChunkName: "pages/Admin/LoaiSP/ThemMoi" */))
 const _e0a024d2 = () => interopDefault(import('..\\pages\\Admin\\SanPham\\ThemMoi.vue' /* webpackChunkName: "pages/Admin/SanPham/ThemMoi" */))
+const _0c3f3744 = () => interopDefault(import('..\\pages\\Admin\\DonHang\\_id\\update.vue' /* webpackChunkName: "pages/Admin/DonHang/_id/update" */))
 const _011af49b = () => interopDefault(import('..\\pages\\Admin\\LoaiSP\\_id\\update.vue' /* webpackChunkName: "pages/Admin/LoaiSP/_id/update" */))
 const _d98b7f22 = () => interopDefault(import('..\\pages\\Admin\\SanPham\\_id\\update.vue' /* webpackChunkName: "pages/Admin/SanPham/_id/update" */))
 const _9b9d3bda = () => interopDefault(import('..\\pages\\Cart\\index.vue' /* webpackChunkName: "pages/Cart/index" */))
@@ -38,6 +40,10 @@ export const routerOptions = {
       component: _6fda2b64,
       name: "Admin-Dashboard"
     }, {
+      path: "DonHang",
+      component: _237d8026,
+      name: "Admin-DonHang"
+    }, {
       path: "LoaiSP",
       component: _506ffc2c,
       name: "Admin-LoaiSP"
@@ -53,6 +59,10 @@ export const routerOptions = {
       path: "SanPham/ThemMoi",
       component: _e0a024d2,
       name: "Admin-SanPham-ThemMoi"
+    }, {
+      path: "DonHang/:id/update",
+      component: _0c3f3744,
+      name: "Admin-DonHang-id-update"
     }, {
       path: "LoaiSP/:id/update",
       component: _011af49b,

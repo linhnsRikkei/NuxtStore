@@ -88,7 +88,7 @@ export default {
         <!-- content -->
         <tr v-for="item in searchMenu"
         :key="item.id"
-        class="text-center hover:bg-[#f7f6f6] w-full h-[50px]">
+        class="text-center hover:bg-[#f7f6f6] w-full h-[50px] border-b">
           <td class="w-[100px] text-left">{{item.content}}</td>
           <td class="">
             <nuxt-link :to="'/Admin/LoaiSP/' + item.id + '/update'">

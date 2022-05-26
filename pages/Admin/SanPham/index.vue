@@ -1,6 +1,6 @@
 <script>
 export default {
-  middleware: 'auth',
+  middleware: ['check_auth', 'auth'],
   head: {
     title: 'Admin | SanPham | Sach Linh Store'
   },
@@ -122,7 +122,7 @@ export default {
         <!-- content -->
         <tr v-for="item in searchProduct"
         :key="item.id"
-        class="text-center hover:bg-[#f7f6f6] w-full">
+        class="text-center hover:bg-[#f7f6f6] w-full border-b">
           <td class="w-[100px] text-left">{{item.Name}}</td>
           <td class="flex flex-col justify-center items-center"> <img v-bind:src="item.Image" alt="" class="w-[100px] h-[100px]"/></td>
           <td class="">

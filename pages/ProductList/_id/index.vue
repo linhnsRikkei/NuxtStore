@@ -1,6 +1,6 @@
 <script>
-import Header from '../../../components/Header.vue';
 export default {
+  layout: 'userLayout',
   beforeCreate() {
     this.$store.dispatch('Product/getAllApi')
     this.$store.dispatch('Menu/getAllApi')
@@ -16,9 +16,6 @@ export default {
   },
   mounted() {
     console.log('created', this.getProduct);
-  },
-  components: {
-    Header
   },
   computed: {
     getProduct() {
@@ -63,7 +60,6 @@ export default {
 </script>
 <template>
   <div class="">
-    <Header />
     <div
       class="w-full pb-[50px] pt-[100px] bg-[#f2f2f2] flex flex-col justify-center items-center"
     >

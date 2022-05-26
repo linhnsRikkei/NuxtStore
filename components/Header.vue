@@ -30,7 +30,7 @@ export default {
 };
 </script>
 <template>
-  <div class="w-full h-[54px] bg-[#fdfdfd] flex flex-row justify-center fixed">
+  <div class="w-full h-[54px] bg-[#fdfdfd] flex flex-row justify-center">
     <div class="w-[1180px] flex flex-row justify-between items-center">
       <!-- menu -->
       <div class="w-[370px] cursor-pointer" v-on:click="buttonOpen">
@@ -108,7 +108,7 @@ export default {
           </li>
           <div
             v-if="cart === true"
-            class="w-[800px] overflow-y-auto h-[1000px] bg-[#fdfafa] text-[#000] z-0 absolute top-[53px] left-[57%] transition-all duration-700"
+            class="w-[800px] overflow-y-auto h-[1000px] bg-[#fdfafa] text-[#000] absolute top-[53px] left-[57%] transition-all duration-700"
           >
             <CartMain />
           </div>

@@ -12,6 +12,9 @@ export const getters = {
 export const mutations = {
   setToken (state, payload) {
     state.token = payload
+  },
+  clearToken(state) {
+    state.token = null
   }
 };
 export const actions = {
@@ -49,6 +52,10 @@ export const actions = {
     if (!tokenLocal) {
       return false
     }
-    commit('setItem', tokenLocal)
+    commit('setToken', tokenLocal)
+  },
+  logOut({ commit }) {
+    commit('clearToken')
+    localStorage.removeItem('Token')
   }
 };

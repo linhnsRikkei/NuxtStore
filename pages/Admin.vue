@@ -25,7 +25,7 @@ export default {
           </nuxt-link>
         </li>
         <li class="w-full py-[15px] px-[20px] border-t-2 border-[#0f0f0f] hover:text-[#3c29a8] bg-[#fff] hover:bg-[#c7c6c6]">
-          <nuxt-link to="" class="w-full text-[20px] cursor-pointer font-sans">
+          <nuxt-link to="/Admin/DonHang" class="w-full text-[20px] cursor-pointer font-sans">
             Đơn hàng
           </nuxt-link>
         </li>

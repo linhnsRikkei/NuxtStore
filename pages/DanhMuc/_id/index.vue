@@ -1,12 +1,11 @@
 <script>
 import Container from '../../../components/productList/Container.vue';
 import HeaderProductList from '../../../components/productList/HeaderProductList.vue';
-import Header from '../../../components/Header.vue'
 export default {
+  layout: 'userLayout',
   components: {
     Container,
-    HeaderProductList,
-    Header
+    HeaderProductList
   },
   beforeCreate() {
     this.$store.dispatch('Product/getAllApi')
@@ -15,7 +14,6 @@ export default {
 </script>
 <template>
   <div class="w-full font-sans">
-    <Header />
     <div class="w-full pt-[50px] bg-[#f2f2f2] flex flex-row justify-center">
       <HeaderProductList />
     </div>

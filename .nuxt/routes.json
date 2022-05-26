@@ -12,6 +12,12 @@
         "chunkName": "pages/Admin/Dashboard/index"
       },
       {
+        "name": "Admin-DonHang",
+        "path": "DonHang",
+        "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\DonHang\\\\index.vue",
+        "chunkName": "pages/Admin/DonHang/index"
+      },
+      {
         "name": "Admin-LoaiSP",
         "path": "LoaiSP",
         "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\LoaiSP\\\\index.vue",
@@ -34,6 +40,12 @@
         "path": "SanPham/ThemMoi",
         "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\SanPham\\\\ThemMoi.vue",
         "chunkName": "pages/Admin/SanPham/ThemMoi"
+      },
+      {
+        "name": "Admin-DonHang-id-update",
+        "path": "DonHang/:id/update",
+        "component": "D:\\\\StoreWithNuxtVue\\\\myapp\\\\pages\\\\Admin\\\\DonHang\\\\_id\\\\update.vue",
+        "chunkName": "pages/Admin/DonHang/_id/update"
       },
       {
         "name": "Admin-LoaiSP-id-update",

@@ -3,7 +3,8 @@ export default {
   data() {
     return {
       email: '',
-      password: ''
+      password: '',
+      token: this.$store.state.Auth
     }
   },
   methods: {
@@ -24,14 +25,17 @@ export default {
         .catch((error) => {
           console.log(error);
         })
+    },
+    logOut() {
+      this.$store.dispatch('Auth/logOut')
     }
   }
 }
 </script>
 <template>
   <div class="w-full flex flex-row justify-center items-center">
-      <div class="w-[50%] h-full flex flex-col justify-center items-center">
-        <h2 class="w-full text-[48px] bg-[#f2f2f2] font-serif font-[700] py-[25px] px-[65px]">Log in</h2>
+      <div v-if="token.token === null" class="w-[50%] h-full flex flex-col justify-center items-center">
+        <h2 class="w-full text-[48px] text-center bg-[#f2f2f2] font-serif font-[700] py-[25px] px-[65px]">Log in</h2>
         <div class="w-full text-[18px] text-[#050505] px-[65px] pt-[30px] pb-[60px] flex flex-col justify-start items-center">
             <form @submit.prevent="onSubmit" class="w-full flex flex-col justify-start items-center">
                 <input v-model="email"
@@ -58,6 +62,10 @@ export default {
             </form>
             <nuxt-link to="/Register" class="my-[20px] flex flex-row justify-start items-center"> You haven't account? <p class="pl-[10px] italic hover:text-[#f04949]">Create account</p> </nuxt-link>
         </div>
-    </div>
+      </div>
+      <div v-else class="w-[50%] h-full flex flex-col justify-center items-center">
+        <h2 class="w-full text-[48px] text-center bg-[#f2f2f2] font-serif font-[700] py-[25px] px-[65px]">Đã đăng nhập</h2>
+        <button @click="logOut" class="inline-block w-full bg-[#f32a2a] hover:bg-[#a50101] py-[20px] px-[10px] text-[18px] text-[#fff]">Log Out</button>
+      </div>
   </div>
 </template>

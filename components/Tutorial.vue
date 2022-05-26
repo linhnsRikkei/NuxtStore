@@ -1,6 +1,5 @@
 <template>
-  <div class="w-full relative">
-    <Header />
+  <div class="w-full">
     <Banner />
     <Content />
   </div>

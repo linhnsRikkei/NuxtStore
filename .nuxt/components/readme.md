@@ -16,7 +16,6 @@ You can directly use them in pages and other components without the need to impo
 - `<Search>` | `<search>` (components/Search.vue)
 - `<Tutorial>` | `<tutorial>` (components/Tutorial.vue)
 - `<CartInfor>` | `<cart-infor>` (components/CartInfo/CartInfor.vue)
-- `<ChartsBarChart>` | `<charts-bar-chart>` (components/Charts/BarChart.vue)
-- `<Menu>` | `<menu>` (components/Menu/Menu.vue)
 - `<ProductListContainer>` | `<product-list-container>` (components/productList/Container.vue)
 - `<ProductListHeaderProductList>` | `<product-list-header-product-list>` (components/productList/HeaderProductList.vue)
+- `<Menu>` | `<menu>` (components/Menu/Menu.vue)

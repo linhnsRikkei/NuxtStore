@@ -7,6 +7,8 @@ export default {
       phone: '',
       email: '',
       total: 0,
+      Address: '',
+      status: false,
       token: this.$store.state.Auth
     }
   },
@@ -33,7 +35,9 @@ export default {
             email: this.email,
             phone: this.phone,
             products: this.getCart,
-            total: this.getTotal + 50000
+            total: this.getTotal + 50000,
+            status: this.status,
+            Address: this.Address
           },
           token: this.token
         }
@@ -42,6 +46,7 @@ export default {
           this.name = ''
           this.email = ''
           this.phone = ''
+          this.Address = ''
           this.total = 0
           this.$store.dispatch('Cart/RemoveAllCart')
         }, 500);
@@ -66,6 +71,7 @@ export default {
                         <input type="text" placeholder="Phone *" v-model="phone" required class="w-[45%] outline-none border-b-2 py-[8px] pl-[15px] text-[20px] focus:border-[#0fe933]">
                     </div>
                     <input type="email" placeholder="Email address *" v-model="email" required class="w-full outline-none border-b-2 py-[8px] pl-[15px] text-[20px] focus:border-[#0fe933]">
+                    <input type="text" placeholder="Address *" v-model="Address" required class="w-full mt-[13px] outline-none border-b-2 py-[8px] pl-[15px] text-[20px] focus:border-[#0fe933]">
                 </div>
                 <!-- Button -->
                 <div class="w-full flex flex-row justify-between items-center mt-[50px]">

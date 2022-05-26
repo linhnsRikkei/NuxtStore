@@ -1,17 +1,15 @@
 <script>
 import CartInfo from '../../components/CartInfo/CartInfor.vue';
-import Header from '../../components/Header.vue'
 export default {
-  middleware: 'userAuth',
+  layout: 'userLayout',
+  middleware: ['check_auth', 'userAuth'],
   components: {
-    CartInfo,
-    Header
+    CartInfo
   }
 };
 </script>
 <template>
   <div>
-    <Header />
     <CartInfo />
   </div>
 </template>

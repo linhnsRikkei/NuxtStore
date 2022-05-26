@@ -3,7 +3,7 @@ export const state = () => ({
   invoices: []
 });
 export const getters = {
-  getAllProduct (state) {
+  getAllInvoice (state) {
     return state.invoices;
   }
 };
@@ -20,6 +20,14 @@ export const mutations = {
       } catch (error) {
         console.log(error)
       }
+    }
+  },
+  async updateInvoice(state, payload) {
+    console.log('paload', payload);
+    try {
+      await HTTP.put('Invoice/' + payload.id + '.json?auth=' + payload.token.token, payload.data)
+    } catch (error) {
+      console.log(error);
     }
   }
 };
@@ -38,5 +46,8 @@ export const actions = {
   },
   addInvoice({ commit }, payload) {
     commit('addInvoice', payload)
+  },
+  updateInvoice({ commit }, payload) {
+    commit('updateInvoice', payload)
   }
 };

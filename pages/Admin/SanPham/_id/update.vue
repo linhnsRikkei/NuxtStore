@@ -194,7 +194,7 @@ export default {
                   to-blue-500
                 "
               >
-                ADD
+                Update
               </button>
             </td>
           </tr>
